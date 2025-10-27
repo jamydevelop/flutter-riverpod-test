@@ -53,7 +53,7 @@ List<Product> allProducts = [
 ];
 
 //Basic Provider: read only state value
-final producsProvider = Provider((ref) {
+final productsProvider = Provider((ref) {
   return allProducts;
 });
 
