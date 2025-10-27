@@ -1,6 +1,7 @@
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_riverpod_test/models/product.dart';
 
-List<Product> allProduct = [
+List<Product> allProducts = [
   Product(
     id: '1',
     title: 'Groovy Shorts',
@@ -50,3 +51,12 @@ List<Product> allProduct = [
     image: 'assets/products/guitar.png',
   ),
 ];
+
+//Basic Provider: read only state value
+final producsProvider = Provider((ref) {
+  return allProducts;
+});
+
+final reduceProductsProvider = Provider((ref) {
+  return allProducts.where((p) => p.price < 50).toList();
+});
