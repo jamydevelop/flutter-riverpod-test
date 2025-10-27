@@ -14,7 +14,7 @@ class _CartScreenState extends ConsumerState<CartScreen> {
 
   @override
   Widget build(BuildContext context) {
-    final cartProducts = ref.watch(reduceProductsProvider);
+    final cartProducts = ref.watch(reduceProductsProviderProvider);
     return Scaffold(
       appBar: AppBar(
         title: const Text('Your Cart'),

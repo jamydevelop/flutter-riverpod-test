@@ -55,16 +55,20 @@ List<Product> allProducts = [
   ),
 ];
 
+@riverpod
+List<Product> products(ref) {
+  return allProducts;
+}
+
 //Basic Provider: read only state value
 // final productsProvider = Provider((ref) {
 //   return allProducts;
 // });
 
-final reduceProductsProvider = Provider((ref) {
-  return allProducts.where((p) => p.price < 50).toList();
-});
-
 @riverpod
-List<Product> products(ref) {
-  return allProducts;
+List<Product> reduceProductsProvider(ref) {
+  return allProducts.where((p) => p.price < 50).toList();
 }
+// final reduceProductsProvider = Provider((ref) {
+//   return allProducts.where((p) => p.price < 50).toList();
+// });
